@@ -1,1 +1,14 @@
-<h1>Items index</h1>
+<h1>[Section_Name] Items</h1>
+
+<ul>
+  <% @items.each do |i| %>
+    <li>
+      <%= i.name %>
+      <div>
+        <%= i.description %>
+      </div>
+    </li>
+  <% end %>
+</ul>
+
+<%= link_to "Return to Menu Sections", "/" %>

@@ -1,6 +1,11 @@
 class ItemsController < ApplicationController
 
   def index
-  end 
+    @items = MenuItem.all
+  end
+
+  def show
+
+  end
 
 end
