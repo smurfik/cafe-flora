@@ -1,1 +1,11 @@
 <h1>Sections index</h1>
+
+<% @sections.each do |s| %>
+  <ul>
+    <li><%= s.name %></li>
+    <% if s.description != nil %>
+      <div><%= s.description %></div>
+    <% end %>
+  </ul>
+<% end %>
+
