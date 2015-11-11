@@ -7,7 +7,19 @@ class MenuSectionsController < ApplicationController
 
   def show
     @menu_section  = MenuSection.find(params[:id])
-    @menu_item     = MenuItem.find(params[:id])
     @menu_items    = MenuItem.all
+  end
+
+  def new
+
+  end
+
+  def add
+    # raise
+    @menu_section             = MenuSection.new
+    @menu_section.name        = params[:menu_section_name]
+    @menu_section.description = params[:menu_section_description]
+    @menu_section.save
+    redirect_to "/menu_sections/#{@menu_section.id}"
   end
 end
