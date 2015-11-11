@@ -1,10 +1,12 @@
 Rails.application.routes.draw do
 
-  get "/"     , to: "sections#index"
-  get "/items", to: "items#index"
+  get "/"                         , to: "sections#index"
+  get "/sections/:menu_section_id", to: "sections#show"
+  # get "/items", to: "items#index"
 
 
-  
+
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

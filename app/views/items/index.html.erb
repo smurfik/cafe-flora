@@ -1,14 +1,21 @@
-<h1>[Section_Name] Items</h1>
+<h1>[Section Name]</h1>
+
+<h2>[Section Description (if applicable)]</h2>
 
 <ul>
   <% @items.each do |i| %>
     <li>
-      <%= i.name %>
-      <div>
-        <%= i.description %>
+      <div class="menu-item">
+        <div class="item-name"><%= i.name%></div>
+        <div class="item-description"><%= i.description%></div>
+        <div class="item-note"><%= i.note%></div>
+        <div class="item-price"><%= i.price%></div>
       </div>
+      <br>
     </li>
   <% end %>
 </ul>
+
+<h3>[Form to add new item to section will go here]</h3>
 
 <%= link_to "Return to Menu Sections", "/" %>

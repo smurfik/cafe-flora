@@ -4,8 +4,4 @@ class ItemsController < ApplicationController
     @items = MenuItem.all
   end
 
-  def show
-
-  end
-
 end
