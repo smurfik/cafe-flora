@@ -1,1 +1,21 @@
 <h1>Sections index</h1>
+
+<% @sections.each do |s| %>
+  <ul>
+    <li><%= s.name %></li>
+    <% if s.description != nil %>
+      <div><%= s.description %></div>
+    <% end %>
+    <ul>
+      <% @items.where(menu_section_id: s.id).each do |i|%>
+        <div class="menu-item">
+          <div class="item-name"><%= i.name%></div>
+          <div class="item-description"><%= i.description%></div>
+          <div class="item-note"><%= i.note%></div>
+          <div class="item-price"><%= i.price%></div>
+        </div>
+        <br>
+      <% end %>
+    </ul>
+  </ul>
+<% end %>
