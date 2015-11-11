@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
 
-  get "/"                         , to: "sections#index"
-  get "/sections/:menu_section_id", to: "sections#show"
+  get "/"                         , to: "menu_sections#index"
+  get "/menu_sections/:id", to: "menu_sections#show"
   # get "/items", to: "items#index"
 
 
