@@ -4,6 +4,9 @@
   <div><%= @menu_section.description %></div>
 <% end %>
 
+<!-- add conditional: if menu section has no items (i.e. when a new one is
+created and user is brought to this page, which is empty) there is a prompt
+to start entering items using form below -->
     <ul>
       <% @menu_items.where(menu_section_id: @menu_section.id).each do |i|%>
         <div class="menu-item">

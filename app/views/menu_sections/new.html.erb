@@ -21,4 +21,15 @@
 <!-- NB: this happens in the 'add' method in m_s controller -->
 
 <!-- If the required field is not filled out I am returned to the same page with the error message "Name can't be blank" -->
+<!-- NB: here's the new code that raises an error message if form is incomplete-->
+<% if @menu_section.errors.any? %>
+  <% @menu_section.errors.each do |column, message| %>
+    <ul>
+      <li>
+        <strong>Section <%= column.capitalize %>:</strong> <%= message %>
+      </li>
+    </ul>
+  <% end %>
+<% end %>
+
 <h2><%= link_to "<-- cancel and return to main menu", "/" %></h2>

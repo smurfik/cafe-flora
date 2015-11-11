@@ -11,7 +11,7 @@ class MenuSectionsController < ApplicationController
   end
 
   def new
-
+    @menu_section             = MenuSection.new    
   end
 
   def add
@@ -19,7 +19,11 @@ class MenuSectionsController < ApplicationController
     @menu_section             = MenuSection.new
     @menu_section.name        = params[:menu_section_name]
     @menu_section.description = params[:menu_section_description]
-    @menu_section.save
-    redirect_to "/menu_sections/#{@menu_section.id}"
+    if @menu_section.save
+      redirect_to "/menu_sections/#{@menu_section.id}"
+    else
+      @menu_sections = MenuSection.all
+      render :new
+    end
   end
 end
