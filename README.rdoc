@@ -1,3 +1,16 @@
+Updates made by Daniel on 11/11/15:
+
+[ ] - added /new view, associated routes & menu_section_controller method(s)
+[ ] - added routes and controller methods for all 3 views to interact
+    [x] - from index, each section name links to section page (via show_section_path)
+    [x] - added @menu_section to m_s controller for h1 on /m_s/:id
+[x] - updated /m_s/:id html to display items from each section
+    [x] - modified menu item iterator from /index to make this work
+    [x] - added link to go back to index
+[ ] 
+[ ]
+
+
 == README
 
 This README would normally document whatever steps are necessary to get the

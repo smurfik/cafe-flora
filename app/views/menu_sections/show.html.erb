@@ -1,0 +1,19 @@
+<h1> <%= @menu_section.name %></h1>
+
+<% if @menu_section.description != nil %>
+  <div><%= @menu_section.description %></div>
+<% end %>
+
+    <ul>
+      <% @menu_items.where(menu_section_id: @menu_section.id).each do |i|%>
+        <div class="menu-item">
+          <div class="item-name"><%= i.name%></div>
+          <div class="item-description"><%= i.description%></div>
+          <div class="item-note"><%= i.note%></div>
+          <div class="item-price"><%= i.price%></div>
+        </div>
+        <br>
+      <% end %>
+    </ul>
+
+<%= link_to "<-- return to main menu", "/" %>

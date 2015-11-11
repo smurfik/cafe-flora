@@ -2,7 +2,7 @@
 
 <% @menu_sections.each do |s| %>
   <ul>
-    <li><%= s.name %></li>
+    <li><%= link_to s.name, show_section_path(s.id)%></li>
     <% if s.description != nil %>
       <div><%= s.description %></div>
     <% end %>
