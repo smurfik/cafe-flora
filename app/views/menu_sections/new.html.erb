@@ -1,27 +1,19 @@
 <form action="/" method="POST">
   <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>" />
-  <fieldset> <!-- this could also be a div. -->
+  <fieldset>
       <legend>New Menu Section</legend>
-      <!-- I must add a name -->
       <label>Section Name:
         <input type="text" name="menu_section_name" placeholder="required"/>
       </label>
       <br>
       <label>Section Description:
-        <!-- I can choose to add a description -->
         <input type="text" name="menu_section_description"/>
       </label>
       <br>
       <input type="submit" value="Create new section"/>
-      <!-- I can click a button which says "Create Menu section" to create a new menu section -->
   </fieldset>
 </form>
 
-<!-- After submitting the form, I am taken to the Section show page /menu_sections/:id -->
-<!-- NB: this happens in the 'add' method in m_s controller -->
-
-<!-- If the required field is not filled out I am returned to the same page with the error message "Name can't be blank" -->
-<!-- NB: here's the new code that raises an error message if form is incomplete-->
 <% if @menu_section.errors.any? %>
   <% @menu_section.errors.each do |column, message| %>
     <ul>
