@@ -1,10 +1,10 @@
 Rails.application.routes.draw do
 
   get  "/"                         , to: "menu_sections#index", as: :all_sections
-  get  "/new"                      , to: "menu_sections#new"
+  get  "/menu_sections/new"        , to: "menu_sections#new"
   get  "/menu_sections/:id"        , to: "menu_sections#show" , as: :show_section
   post "/"                         , to: "menu_sections#add"
-  # 'post' route for new menu item will go here
+  post "/menu_sections/:id"        , to: "menu_items#add"
 
 
   # The priority is based upon order of creation: first created -> highest priority.

@@ -11,7 +11,7 @@ class MenuSectionsController < ApplicationController
   end
 
   def new
-    @menu_section             = MenuSection.new    
+    @menu_section             = MenuSection.new
   end
 
   def add

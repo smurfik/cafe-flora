@@ -19,7 +19,38 @@ to start entering items using form below -->
       <% end %>
     </ul>
 
-<h2> [form to add new MenuItem to this section will go here]</h2>
-<!-- form should include <textarea> for description, checkboxes for notes,-->
+<h2> Add a new item to this menu section:</h2>
+<form action="/menu_sections/<%=@menu_section.id%>" method="POST">
+  <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>" />
+  <fieldset> <!-- this could also be a div. -->
+      <legend>New Menu Item</legend>
+        <label>Item Name:
+          <input type="text" name="menu_item_name" placeholder="required"/>
+        </label>
+        <br>
+        <label>Item Price:
+          <input type="text" name="menu_item_price" placeholder="00.00"/>
+        </label>
+        <br>
+        <label>Item Description:
+          <!-- this could also be a <textarea> instead -->
+          <input type="text" name="menu_item_description"/>
+        </label>
+        <br>
+        <label>Item Note:
+          <ul>
+            <li><input type="checkbox" name="menu_item_note" value="GF"/>GF</li>
+            <li><input type="checkbox" name="menu_item_note" value="GF*"/>GF*</li>
+            <li><input type="checkbox" name="menu_item_note" value="SF"/>SF</li>
+            <li><input type="checkbox" name="menu_item_note" value="SF*"/>SF*</li>
+            <li><input type="checkbox" name="menu_item_note" value="V"/>V</li>
+            <li><input type="checkbox" name="menu_item_note" value="V*"/>V*</li>
+          </ul>
+        </label>
+        <br>
+        <input type="submit" value="Create new menu item"/>
+  </fieldset>
+</form>
+
 
 <h2><%= link_to "<-- return to main menu", "/" %></h2>
