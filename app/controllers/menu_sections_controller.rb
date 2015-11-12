@@ -15,7 +15,6 @@ class MenuSectionsController < ApplicationController
   end
 
   def add
-    # raise
     @menu_section             = MenuSection.new
     @menu_section.name        = params[:menu_section_name]
     @menu_section.description = params[:menu_section_description]

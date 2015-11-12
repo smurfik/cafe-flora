@@ -22,6 +22,7 @@
 
 <!-- If the required field is not filled out I am returned to the same page with the error message "Name can't be blank" -->
 <!-- NB: here's the new code that raises an error message if form is incomplete-->
+
 <% if @menu_section.errors.any? %>
   <% @menu_section.errors.each do |column, message| %>
     <ul>
