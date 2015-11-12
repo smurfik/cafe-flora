@@ -1,13 +1,13 @@
 class MenuSectionsController < ApplicationController
 
   def index
-    @menu_sections = MenuSection.all
-    @menu_items = MenuItem.all
+    @menu_sections            = MenuSection.all
+    @menu_items               = MenuItem.all
   end
 
   def show
-    @menu_section  = MenuSection.find(params[:id])
-    @menu_items    = MenuItem.all
+    @menu_section             = MenuSection.find(params[:id])
+    @menu_items               = MenuItem.all
   end
 
   def new
@@ -21,7 +21,7 @@ class MenuSectionsController < ApplicationController
     if @menu_section.save
       redirect_to "/menu_sections/#{@menu_section.id}"
     else
-      @menu_sections = MenuSection.all
+      @menu_sections          = MenuSection.all
       render :new
     end
   end
