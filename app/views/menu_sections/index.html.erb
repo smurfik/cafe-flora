@@ -1,4 +1,3 @@
-
 <div class="header">
   <%= image_tag "kale.png", :class => "top-image" %>
 </div>
@@ -13,7 +12,7 @@
           <% if s.description != nil %>
             <div class="section-description"><%= s.description %></div>
           <% end %>
-            <% @menu_items.where(menu_section_id: s.id).each do |i|%>
+            <% s.menu_items.each do |i|%>
               <div class="menu-item">
                 <div class="item-left-block">
                   <div class="item-name"><%= i.name.upcase%></div>

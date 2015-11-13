@@ -8,7 +8,7 @@
 created and user is brought to this page, which is empty) there is a prompt
 to start entering items using form below -->
     <ul>
-      <% @menu_items.where(menu_section_id: @menu_section.id).each do |i|%>
+      <% @menu_section.menu_items.each do |i|%>
         <div class="menu-item">
           <div class="item-name"><%= i.name%></div>
           <div class="item-description"><%= i.description%></div>
@@ -20,6 +20,16 @@ to start entering items using form below -->
     </ul>
 
 <h2> Add a new item to this menu section:</h2>
+
+<% if @menu_item %>
+  <ul>
+    <% @menu_item.errors.each do |column, error| %>
+      <li>
+        <strong>Item <%= column.capitalize %>:</strong> <%= error %>
+    </li>
+    <% end %>
+<% end %>
+
 <form action="/menu_sections/<%=@menu_section.id%>" method="POST">
   <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>" />
   <fieldset>

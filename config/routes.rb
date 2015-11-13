@@ -6,7 +6,6 @@ Rails.application.routes.draw do
   post "/"                         , to: "menu_sections#add"
   post "/menu_sections/:id"        , to: "menu_items#add"
 
-
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

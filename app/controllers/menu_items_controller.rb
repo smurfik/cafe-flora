@@ -1,13 +1,5 @@
 class MenuItemsController < ApplicationController
 
-  def index
-    @menu_items = MenuItem.all
-  end
-
-   def new
-    @menu_item                 = MenuItem.new
-  end
-
   def add
     @menu_item                 = MenuItem.new
     @menu_item.name            = params[:menu_item_name]
@@ -16,11 +8,11 @@ class MenuItemsController < ApplicationController
     @menu_item.note            = params[:menu_item_note]
     @menu_item.menu_section_id = params[:id]
     if @menu_item.save
-      redirect_to "/menu_sections/#{@menu_item.menu_section_id}"
+      redirect_to show_section_path(params[:id])
     else
-      # not sure if this part is right for new menu items (ok for sections)
-      @menu_sections = MenuSection.all
-      render :new
+      @menu_items              = MenuItem.all
+      @menu_section            = MenuSection.find(params[:id])
+      render "menu_sections/show"
     end
   end
 
