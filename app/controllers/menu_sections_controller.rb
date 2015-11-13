@@ -19,7 +19,7 @@ class MenuSectionsController < ApplicationController
     @menu_section.name        = params[:menu_section_name]
     @menu_section.description = params[:menu_section_description]
     if @menu_section.save
-      redirect_to "/menu_sections/#{@menu_section.id}"
+      redirect_to show_section_path(@menu_section.id)
     else
       @menu_sections          = MenuSection.all
       render :new
