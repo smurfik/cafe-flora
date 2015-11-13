@@ -7,7 +7,7 @@
       <div><%= s.description %></div>
     <% end %>
     <ul>
-      <% MenuSection.find(s.id).menu_items.each do |i|%>
+      <% s.menu_items.each do |i|%>
         <div class="menu-item">
           <div class="item-name"><%= i.name%></div>
           <div class="item-description"><%= i.description%></div>

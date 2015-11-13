@@ -8,7 +8,7 @@
 created and user is brought to this page, which is empty) there is a prompt
 to start entering items using form below -->
     <ul>
-      <% MenuSection.find(@menu_section.id).menu_items.each do |i|%>
+      <% @menu_section.menu_items.each do |i|%>
         <div class="menu-item">
           <div class="item-name"><%= i.name%></div>
           <div class="item-description"><%= i.description%></div>
