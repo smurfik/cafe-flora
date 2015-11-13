@@ -8,7 +8,7 @@ class MenuItemsController < ApplicationController
     @menu_item.note            = params[:menu_item_note]
     @menu_item.menu_section_id = params[:id]
     if @menu_item.save
-      redirect_to "/menu_sections/#{@menu_item.menu_section_id}"
+      redirect_to show_section_path(params[:id])
     else
       @menu_items              = MenuItem.all
       @menu_section            = MenuSection.find(params[:id])
