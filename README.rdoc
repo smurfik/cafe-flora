@@ -38,7 +38,14 @@ Updates made by Daniel on 11/11/15:
         [ ] - add error message prompting input of missing info
 
 [ ] - Design: start Thursday, basic design in place by Monday
-
+        [ ] - /index
+              [ ] - fonts
+              [ ] - background
+              [ ] - images
+              [ ] - menu sections & items 
+        [ ] - /new
+        [ ] - /show
+        [ ] - ALL: after multiple menus in place, update classes to use instance variables in controllers
 
 == README
 

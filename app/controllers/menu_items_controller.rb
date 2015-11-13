@@ -4,7 +4,7 @@ class MenuItemsController < ApplicationController
     @menu_items = MenuItem.all
   end
 
-  def new
+   def new
     @menu_item                 = MenuItem.new
   end
 

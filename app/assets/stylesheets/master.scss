@@ -1,0 +1,128 @@
+ul {
+  list-style-type: none;
+}
+
+body {
+  font-family: "Iowan Old Style";
+}
+
+a:visited{
+  color: blue;
+}
+
+.header {
+  text-align: center;
+}
+
+.header .top-image {
+  width: 815px;
+  text-align: center;
+}
+
+.page-content {
+  margin: 0 auto;
+  width: 800px;
+  background-color: rgba(210, 207, 177, 0.50);
+}
+
+.page-content:after{
+  content: "";
+  display: block;
+  clear: both;
+}
+
+.menu-name {
+  text-align: center;
+  text-decoration: underline;
+  font-size: 36px;
+}
+
+.menu-section {
+  font-weight: bold;
+  font-size:   30px;
+  min-width: 650px;
+  margin: 0 auto;
+}
+
+  .menu-section .section-name {
+    text-align: center;
+  }
+
+  .menu-section .section-description {
+    font-size:18px;
+    font-weight: bold;
+    text-align: center;
+    padding-top: 5px;
+    padding-bottom: 10px;
+  }
+
+.menu-item {
+  font-family: "Gill Sans";
+  font-size:   18px;
+  font-weight: normal;
+  width: 645px;
+  margin: 0 auto;
+  padding-top: 10px;
+  padding-bottom: 15px;
+}
+
+.menu-item:after {
+  content: "";
+  display: block;
+  clear: both;
+}
+
+  .menu-item .item-left-block {
+    float: left;
+    width: 575px;
+    clear: left;
+  }
+
+    .menu-item .item-name {
+      font-size: 24px;
+    }
+
+    .menu-item .description-and-note {
+      width: 550px
+    }
+
+      .menu-item .item-description {
+        font-style: italic;
+        font-family: "Iowan Old Style";
+        display: inline;
+      }
+
+      .menu-item .item-note {
+        font-size: 15px;
+        display: inline-block;
+        font-weight: 600;
+      }
+
+  .menu-item .item-right-block {
+    float: right;
+    width: 40px;
+  }
+
+    .menu-item .item-price {
+      font-size: 20px;
+      float: right;
+    }
+
+// How do I get this to apply just to the 'bottom-link class, not all 'a's ?
+  .footer {
+    float: left;
+    clear: left;
+    text-align: center;
+    display: block;
+    width: 100%;
+  }
+
+  .footer a {
+    font-size: 24px;
+    display: block;
+  }
+
+  .footer .bottom-image {
+    width: 840px;
+    padding-right: 25px;
+  }
