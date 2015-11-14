@@ -2,36 +2,35 @@
   <%= image_tag "kale.png", :class => "top-image" %>
 </div>
 
-<div class="page-content">
-    <h1 class="menu-name">[Menu Name] Menu</h1>
-    <% @menu_sections.each do |s| %>
-        <div class="menu-section">
-          <div class="section-name">
-            <%= link_to s.name, show_section_path(s.id)%>
-          </div>
-          <% if s.description != nil %>
-            <div class="section-description"><%= s.description %></div>
-          <% end %>
-            <% s.menu_items.each do |i|%>
-              <div class="menu-item">
-                <div class="item-left-block">
-                  <div class="item-name"><%= i.name.upcase%></div>
-                  <div class="description-and-note">
-                    <div class="item-description"><%= i.description%></div>
-                    <div class="item-note"><%= i.note%></div>
-                  </div>
-                </div>
-                <div class="item-right-block">
-                  <div class="item-price"><%= i.price.to_i%></div>
-                </div>
-              </div>
-            <% end %>
-            <br>
-        </div>
-    <% end %>
-</div>
+<h1 class="menu-name">[Menu Name] Menu</h1>
 
-  <div class="footer">
-    <a><%= link_to "Add a new Menu Section", "/menu_sections/new" %></a>
-    <%= image_tag "squash.png", :class => "bottom-image" %>
+<% @menu_sections.each do |s| %>
+  <div class="menu-section">
+    <div class="section-name">
+      <%= link_to s.name, show_section_path(s.id)%>
+    </div>
+    <% if s.description != nil %>
+      <div class="section-description"><%= s.description %></div>
+    <% end %>
+    <% s.menu_items.each do |i|%>
+      <div class="menu-item">
+        <div class="item-left-block">
+          <div class="item-name"><%= i.name.upcase%></div>
+          <div class="description-and-note">
+          <div class="item-description"><%= i.description%></div>
+          <div class="item-note"><%= i.note%></div>
+        </div>
+      </div>
+      <div class="item-right-block">
+        <div class="item-price"><%= i.price.to_i%></div>
+      </div>
+      </div>
+    <% end %>
+    <br>
   </div>
+<% end %>
+
+<div class="footer">
+  <a><%= link_to "Add a new Menu Section", "/menu_sections/new" %></a>
+  <%= image_tag "squash.png", :class => "bottom-image" %>
+</div>
