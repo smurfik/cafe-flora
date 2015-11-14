@@ -1,25 +1,30 @@
-<h1> <%= @menu_section.name %></h1>
+<div class="show-name">
+  <h1> <%= @menu_section.name %></h1>
+</div>
 
-<% if @menu_section.description != nil %>
-  <div><%= @menu_section.description %></div>
-<% end %>
+<div class="menu-section">
+  <% if @menu_section.description != nil %>
+    <div class="section-description"><%= @menu_section.description %></div>
+  <% end %>
+</div>
 
 <!-- add conditional: if menu section has no items (i.e. when a new one is
 created and user is brought to this page, which is empty) there is a prompt
 to start entering items using form below -->
-    <ul>
-      <% @menu_section.menu_items.each do |i|%>
-        <div class="menu-item">
-          <div class="item-name"><%= i.name%></div>
-          <div class="item-description"><%= i.description%></div>
-          <div class="item-note"><%= i.note%></div>
-          <div class="item-price"><%= i.price%></div>
-        </div>
-        <br>
-      <% end %>
-    </ul>
+<% @menu_section.menu_items.each do |i|%>
+  <div class="menu-item">
+    <div class="item-left-block">
+      <div class="item-name"><%= i.name.upcase%></div>
+      <div class="item-description"><%= i.description%></div>
+      <div class="item-note"><%= i.note%></div>
+    </div>
+    <div class="item-right-block">
+      <div class="item-price"><%= i.price%></div>
+    </div>
+  </div>
+<% end %>
 
-<h2> Add a new item to this menu section:</h2>
+<div class="separator"> Add a new item to this menu section:</div>
 
 <% if @menu_item %>
   <ul>
@@ -33,32 +38,32 @@ to start entering items using form below -->
 <form action="/menu_sections/<%=@menu_section.id%>" method="POST">
   <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>" />
   <fieldset>
-      <legend>New Menu Item</legend>
-        <label>Item Name:
-          <input type="text" name="menu_item_name" placeholder="required"/>
-        </label>
-        <br>
-        <label>Item Price:
-          <input type="text" name="menu_item_price" placeholder="00.00"/>
-        </label>
-        <br>
-        <label>Item Description:
-          <!-- this could also be a <textarea> instead -->
-          <input type="text" name="menu_item_description"/>
-        </label>
-        <br>
-        <label>Item Note:
-          <ul>
-            <li><input type="checkbox" name="menu_item_note" value="GF"/>GF</li>
-            <li><input type="checkbox" name="menu_item_note" value="GF*"/>GF*</li>
-            <li><input type="checkbox" name="menu_item_note" value="SF"/>SF</li>
-            <li><input type="checkbox" name="menu_item_note" value="SF*"/>SF*</li>
-            <li><input type="checkbox" name="menu_item_note" value="V"/>V</li>
-            <li><input type="checkbox" name="menu_item_note" value="V*"/>V*</li>
-          </ul>
-        </label>
-        <br>
-        <input type="submit" value="Create new menu item"/>
+    <legend>New Menu Item</legend>
+      <label>Item Name:
+        <input type="text" name="menu_item_name" placeholder="required"/>
+      </label>
+      <br>
+      <label>Item Price:
+        <input type="text" name="menu_item_price" placeholder="00.00"/>
+      </label>
+      <br>
+      <label>Item Description:
+        <!-- this could also be a <textarea> instead -->
+        <input type="text" name="menu_item_description"/>
+      </label>
+      <br>
+      <label>Item Note:
+        <ul>
+          <li><input type="checkbox" name="menu_item_note" value="GF"/>GF</li>
+          <li><input type="checkbox" name="menu_item_note" value="GF*"/>GF*</li>
+          <li><input type="checkbox" name="menu_item_note" value="SF"/>SF</li>
+          <li><input type="checkbox" name="menu_item_note" value="SF*"/>SF*</li>
+          <li><input type="checkbox" name="menu_item_note" value="V"/>V</li>
+          <li><input type="checkbox" name="menu_item_note" value="V*"/>V*</li>
+        </ul>
+      </label>
+      <br>
+      <input type="submit" value="Create new menu item"/>
   </fieldset>
 </form>
 
