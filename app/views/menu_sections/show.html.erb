@@ -16,7 +16,7 @@ to start entering items using form below -->
     <div class="item-left-block">
       <div class="item-name"><%= i.name.upcase%></div>
       <div class="item-description"><%= i.description%></div>
-      <div class="item-note"><%= i.note%></div>
+      <div class="item-note"><%= i.note.delete('"').delete('[').delete(']')%></div>
     </div>
     <div class="item-right-block">
       <div class="item-price"><%= i.price%></div>
@@ -54,12 +54,12 @@ to start entering items using form below -->
       <br>
       <label>Item Note:
         <ul>
-          <li><input type="checkbox" name="menu_item_note" value="GF"/>GF</li>
-          <li><input type="checkbox" name="menu_item_note" value="GF*"/>GF*</li>
-          <li><input type="checkbox" name="menu_item_note" value="SF"/>SF</li>
-          <li><input type="checkbox" name="menu_item_note" value="SF*"/>SF*</li>
-          <li><input type="checkbox" name="menu_item_note" value="V"/>V</li>
-          <li><input type="checkbox" name="menu_item_note" value="V*"/>V*</li>
+          <li><input type="checkbox" name="menu_item_note[]" value="GF"/>GF</li>
+          <li><input type="checkbox" name="menu_item_note[]" value="GF*"/>GF*</li>
+          <li><input type="checkbox" name="menu_item_note[]" value="SF"/>SF</li>
+          <li><input type="checkbox" name="menu_item_note[]" value="SF*"/>SF*</li>
+          <li><input type="checkbox" name="menu_item_note[]" value="V"/>V</li>
+          <li><input type="checkbox" name="menu_item_note[]" value="V*"/>V*</li>
         </ul>
       </label>
       <br>

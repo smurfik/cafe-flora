@@ -26,25 +26,25 @@ Updates made by Daniel on 11/11/15:
                 - in /new view, added conditionals to test for error
                 - added @menu_section to 'add' method in m_s controller
 
-[ ] - added form for new menu ITEM
+[x] - added form for new menu ITEM
   [x] - included InvalidAuthenticityToken error workaround in show.html.erb
   [x] - 'add' method in m_i controller
           - used 'raise' before method, then entered params in IRB, to confirm
             that the 'name' tag for the input (key) is associated with the
             actual input (value).
-    [ ] - get it to allow multiple selections for 'note' checkboxes
-  [ ] - validation for this form
-        [ ] - add 'validates' and arguments to model
-        [ ] - add error message prompting input of missing info
+    [x] - get it to allow multiple selections for 'note' checkboxes
+  [x] - validation for this form
+        [x] - add 'validates' and arguments to model
+        [x] - add error message prompting input of missing info
 
 [ ] - Design: start Thursday, basic design in place by Monday
-        [ ] - /index
-              [ ] - fonts
+        [x] - /index
+              [x] - fonts
               [ ] - background
-              [ ] - images
-              [ ] - menu sections & items 
-        [ ] - /new
-        [ ] - /show
+              [x] - images
+              [x] - menu sections & items
+        [x] - /new
+        [x] - /show
         [ ] - ALL: after multiple menus in place, update classes to use instance variables in controllers
 
 == README
