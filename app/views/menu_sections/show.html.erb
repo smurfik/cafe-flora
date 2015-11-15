@@ -19,7 +19,7 @@ to start entering items using form below -->
       <div class="item-note"><%= i.note.delete('"').delete('[').delete(']')%></div>
     </div>
     <div class="item-right-block">
-      <div class="item-price"><%= i.price%></div>
+      <div class="item-price"><%= i.price.to_i%></div>
     </div>
   </div>
 <% end %>
