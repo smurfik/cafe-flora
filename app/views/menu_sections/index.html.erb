@@ -18,7 +18,7 @@
           <div class="item-name"><%= i.name.upcase%></div>
           <div class="description-and-note">
           <div class="item-description"><%= i.description%></div>
-          <div class="item-note"><%= i.note%></div>
+          <div class="item-note"><%= i.note.delete('"').delete('[').delete(']')%></div>
         </div>
       </div>
       <div class="item-right-block">
