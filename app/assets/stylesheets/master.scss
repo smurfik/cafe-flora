@@ -1,5 +1,6 @@
 ul {
   list-style-type: none;
+  padding-left: 0;
 }
 
 body {
@@ -38,11 +39,12 @@ a:visited{
   font-size: 36px;
 }
 
-.menu-section {
+.section-description {
   font-weight: bold;
-  font-size:   30px;
+  font-size:   18px;
   min-width: 650px;
   margin: 0 auto;
+  text-align: center;
 }
 
   .menu-section .section-name {
