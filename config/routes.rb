@@ -9,8 +9,8 @@ Rails.application.routes.draw do
   get  "/:menu_id/menu_sections/:sec_id" , to: "menu_sections#edit" , as: :edit_section
 
   # will need to update these routes forms to work with new views
-  post "/"                         , to: "menu_sections#add"
-  post "/menu_sections/:id"        , to: "menu_items#add"
+  post "/:menu_id"                       , to: "menu_sections#add"  , as: :add_section
+  post "/:menu_id/menu_sections/:sec_id" , to: "menu_items#add"     , as: :add_item
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

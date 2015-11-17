@@ -16,7 +16,11 @@ to start entering items using form below -->
     <div class="item-left-block">
       <div class="item-name"><%= i.name.upcase%></div>
       <div class="item-description"><%= i.description%></div>
-      <div class="item-note"><%= i.note.delete('"').delete('[').delete(']')%></div>
+      <% if i.note == "[\"false\"]" %>
+        <div> <%=""%></div>
+      <%else%>
+        <div class="item-note"><%= i.note.delete('"').delete('[').delete(']')%></div>
+      <%end%>
     </div>
     <div class="item-right-block">
       <div class="item-price"><%= i.price.to_i%></div>
@@ -35,7 +39,7 @@ to start entering items using form below -->
     <% end %>
 <% end %>
 
-<form action="/menu_sections/<%=@menu_section.id%>" method="POST">
+<form action="/<%=@menu.id%>/menu_sections/<%=@menu_section.id%>" method="POST">
   <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>" />
   <fieldset>
     <legend>New Menu Item</legend>
@@ -54,6 +58,7 @@ to start entering items using form below -->
       <br>
       <label>Item Note:
         <ul>
+          <li><input type="hidden" name="menu_item_note[]" value="false"/></li>
           <li><input type="checkbox" name="menu_item_note[]" value="GF"/>GF</li>
           <li><input type="checkbox" name="menu_item_note[]" value="GF*"/>GF*</li>
           <li><input type="checkbox" name="menu_item_note[]" value="SF"/>SF</li>

@@ -29,17 +29,9 @@ ActiveRecord::Schema.define(version: 20151116231034) do
   create_table "menu_sections", force: :cascade do |t|
     t.string   "name"
     t.text     "description"
-    t.datetime "created_at",   null: false
-    t.datetime "updated_at",   null: false
-    t.integer  "menu_type_id"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
     t.integer  "menu_id"
-  end
-
-  create_table "menu_types", force: :cascade do |t|
-    t.string   "name"
-    t.integer  "menu_type_id"
-    t.datetime "created_at",   null: false
-    t.datetime "updated_at",   null: false
   end
 
   create_table "menus", force: :cascade do |t|
