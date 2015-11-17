@@ -6,6 +6,9 @@
     <ul> <% s.menu_items.each do |i|  %>
       <li>
         <%= i.name %>
+        <%= i.description %>
+        <%= i.price %>
+        <%= i.note %>
       </li>
       <% end %>
     </ul>
