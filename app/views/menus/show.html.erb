@@ -1,20 +1,21 @@
-<h1>here is an outline of all sections and items for a given menu</h1>
+<h1> <%= @menu.name %></h1>
+
+<h3> NOTE: later, all sections will be visible and items will be hidden behind jQuery drop-downs</h3>
 
 <ul>
   <% @menu.menu_sections.each do |s| %>
   <li><%= link_to s.name, show_section_path(:menu_id => @menu.id, :sec_id => s.id) %></li>
     <ul> <% s.menu_items.each do |i|  %>
       <li>
-        <%= i.name %>
+        <%= i.name.upcase %>
         <%= i.description %>
-        <%= i.price %>
+        <%= i.price.to_i %>
         <%= i.note %>
       </li>
       <% end %>
     </ul>
   <% end  %>
 </ul>
-<h3> later, the items will be hidden behind jQuery drop-downs</h3>
 
 <p>
   Add a new section to <%= link_to @menu.name, new_section_path(@menu.id)%>
@@ -24,5 +25,6 @@
   Preview <%= link_to @menu.name, preview_menu_path(@menu.id) %>
 </p>
 
-
-<!-- get  "/:id/menu_sections/new"    , to: "menu_sections#new" -->
+<p>
+  <%= link_to "return to homepage", all_menus_path %>
+</p>
