@@ -16,9 +16,6 @@ class MenuSectionsController < ApplicationController
     @menu_id                  = params[:menu_id]
   end
 
-  def edit
-  end
-
   def add
     @menu_section             = MenuSection.new
     @menu_section.name        = params[:menu_section_name]

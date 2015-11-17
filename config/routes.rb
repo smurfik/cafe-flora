@@ -8,9 +8,11 @@ Rails.application.routes.draw do
   get  "/:menu_id/preview"               , to: "menus#preview"      , as: :preview_menu
   get  "/:menu_id/menu_sections/:sec_id" , to: "menu_sections#show" , as: :show_section
 
-  # will need to update these routes forms to work with new views
   post "/:menu_id"                       , to: "menu_sections#add"  , as: :add_section
   post "/:menu_id/menu_sections/:sec_id" , to: "menu_items#add"     , as: :add_item
+
+  get "/:menu_id/menu_sections/:sec_id/edit", to: "menu_items#edit" , as: :edit_item
+  put "/:menu_id/menu_sections/:sec_id/update", to: "menu_items#update", as: :update_item
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

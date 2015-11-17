@@ -17,4 +17,11 @@ class MenuItemsController < ApplicationController
     end
   end
 
+  def edit
+    @menu_section = MenuSection.find(params[:sec_id])
+  end
+
+  def update
+  end
+
 end

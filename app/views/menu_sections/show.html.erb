@@ -23,6 +23,8 @@ to start entering items using form below -->
       <%end%>
     </div>
     <div class="item-right-block">
+      <div> <%= link_to "Edit", edit_item_path %></div>
+      <div>Delete</div>
       <div class="item-price"><%= i.price.to_i%></div>
     </div>
   </div>
