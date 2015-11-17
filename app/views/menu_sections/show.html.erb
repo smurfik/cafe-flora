@@ -8,15 +8,13 @@
   <% end %>
 </div>
 
-
-
 <!-- add conditional: if menu section has no items (i.e. when a new one is
 created and user is brought to this page, which is empty) there is a prompt
 to start entering items using form below -->
 <% @menu_section.menu_items.each do |i|%>
   <div class="menu-item">
     <div class="item-left-block">
-      <div class="item-name"><%= i.name.upcase%></div>
+      <div class="item-name" id="full"><%= i.name.upcase%></div>
       <div class="item-description"><%= i.description%></div>
       <% if i.note == "[\"false\"]" %>
         <div> <%=""%></div>
