@@ -1,0 +1,19 @@
+<h1>here is an outline of all sections and items for a given menu</h1>
+
+<ul>
+  <% @menu.menu_sections.each do |s| %>
+  <li><%= link_to s.name, edit_section_path(:menu_id => @menu.id, :sec_id => s.id) %></li>
+  <% end  %>
+</ul>
+<h3> later, the items will be hidden behind jQuery drop-downs</h3>
+
+<p>
+  Add a new section to <%= link_to @menu.name, new_section_path(@menu.id)%>
+</p>
+
+<p>
+  Preview <%= link_to @menu.name, preview_menu_path(@menu.id) %>
+</p>
+
+
+<!-- get  "/:id/menu_sections/new"    , to: "menu_sections#new" -->

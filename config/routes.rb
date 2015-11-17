@@ -1,8 +1,14 @@
 Rails.application.routes.draw do
 
-  get  "/"                         , to: "menu_sections#index", as: :all_sections
-  get  "/menu_sections/new"        , to: "menu_sections#new"
-  get  "/menu_sections/:id"        , to: "menu_sections#show" , as: :show_section
+  get  "/"                         , to: "menus#index"        , as: :all_menus
+  # get  "/"                         , to: "menu_sections#index", as: :all_sections
+  # BELOW :id is menu_id
+  get  "/:menu_id"                       , to: "menus#show"         , as: :show_menu
+  get  "/:menu_id/menu_sections/new"     , to: "menu_sections#new"  , as: :new_section
+  get  "/:menu_id/preview"               , to: "menus#preview"      , as: :preview_menu
+  get  "/:menu_id/menu_sections/:sec_id" , to: "menu_sections#edit" , as: :edit_section
+
+  # will need to update these routes forms to work with new views
   post "/"                         , to: "menu_sections#add"
   post "/menu_sections/:id"        , to: "menu_items#add"
 

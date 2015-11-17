@@ -6,12 +6,12 @@ class MenuItemsController < ApplicationController
     @menu_item.price           = params[:menu_item_price]
     @menu_item.description     = params[:menu_item_description]
     @menu_item.note            = params[:menu_item_note]
-    @menu_item.menu_section_id = params[:id]
+    @menu_item.menu_section_id = params[:sec_id]
     if @menu_item.save
-      redirect_to show_section_path(params[:id])
+      redirect_to show_section_path(params[:sec_id])
     else
       @menu_items              = MenuItem.all
-      @menu_section            = MenuSection.find(params[:id])
+      @menu_section            = MenuSection.find(params[:sec_id])
       render "menu_sections/show"
     end
   end

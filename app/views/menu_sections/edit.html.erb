@@ -68,3 +68,4 @@ to start entering items using form below -->
 </form>
 
 <h2><%= link_to "<-- return to main menu", "/" %></h2>
+<h2>Preview<%= link_to @menu.name, preview_menu_path(@menu.id) %></h2>

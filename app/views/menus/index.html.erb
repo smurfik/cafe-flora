@@ -1,0 +1,10 @@
+<h1>Cafe Flora Menu Planner</h1>
+
+<% @menus.each do |m| %>
+  <div>
+    <%= link_to m.name, show_menu_path(m.id)%>
+  </div>
+<% end  %>
+<span>link to add new menu form will go here</span>
+
+<h1>image, logo, etc. </h1>
