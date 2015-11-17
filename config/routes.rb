@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   get  "/:menu_id"                       , to: "menus#show"         , as: :show_menu
   get  "/:menu_id/menu_sections/new"     , to: "menu_sections#new"  , as: :new_section
   get  "/:menu_id/preview"               , to: "menus#preview"      , as: :preview_menu
-  get  "/:menu_id/menu_sections/:sec_id" , to: "menu_sections#edit" , as: :edit_section
+  get  "/:menu_id/menu_sections/:sec_id" , to: "menu_sections#show" , as: :show_section
 
   # will need to update these routes forms to work with new views
   post "/:menu_id"                       , to: "menu_sections#add"  , as: :add_section

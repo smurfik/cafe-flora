@@ -2,7 +2,7 @@
 
 <ul>
   <% @menu.menu_sections.each do |s| %>
-  <li><%= link_to s.name, edit_section_path(:menu_id => @menu.id, :sec_id => s.id) %></li>
+  <li><%= link_to s.name, show_section_path(:menu_id => @menu.id, :sec_id => s.id) %></li>
   <% end  %>
 </ul>
 <h3> later, the items will be hidden behind jQuery drop-downs</h3>

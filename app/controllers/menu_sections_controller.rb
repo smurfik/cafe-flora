@@ -5,7 +5,7 @@ class MenuSectionsController < ApplicationController
     @menu_items               = MenuItem.all
   end
 
-  def edit
+  def show
     @menu_section             = MenuSection.find(params[:sec_id])
     @menu_items               = MenuItem.all
     @menu                     = Menu.find(params[:menu_id])
