@@ -3,7 +3,6 @@ Rails.application.routes.draw do
   get  "/"                         , to: "menus#index"        , as: :all_menus
   post  "/"                        , to: "menus#add"
   # get  "/"                         , to: "menu_sections#index", as: :all_sections
-  # BELOW :id is menu_id
   get  "/:menu_id"                       , to: "menus#show"         , as: :show_menu
   get  "/:menu_id/menu_sections/new"     , to: "menu_sections#new"  , as: :new_section
   get  "/:menu_id/preview"               , to: "menus#preview"      , as: :preview_menu
@@ -12,8 +11,6 @@ Rails.application.routes.draw do
   post "/:menu_id"                       , to: "menu_sections#add"  , as: :add_section
   post "/:menu_id/menu_sections/:sec_id" , to: "menu_items#add"     , as: :add_item
 
-  get "/:menu_id/menu_sections/:sec_id/edit", to: "menu_items#edit" , as: :edit_item
-  put "/:menu_id/menu_sections/:sec_id/update", to: "menu_items#update", as: :update_item
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

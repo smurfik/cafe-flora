@@ -18,13 +18,4 @@ class MenuItemsController < ApplicationController
     end
   end
 
-  def edit
-    @page_content     = "page-content"
-    @menu_section = MenuSection.find(params[:sec_id])
-  end
-
-  def update
-    @page_content     = "page-content"
-  end
-
 end
