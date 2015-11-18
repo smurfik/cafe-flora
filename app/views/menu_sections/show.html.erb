@@ -12,11 +12,7 @@ to start entering items using form below -->
     <div>
       <div id="full"><%= i.name.upcase%></div>
       <div ><%= i.description%></div>
-      <% if i.note.blank? %>
-        <div> </div>
-      <%else%>
-        <div><%= i.note.delete('"').delete('[').delete(']')%></div>
-      <%end%>
+      <div><%= i.clean_note%></div>
     </div>
     <div>
       <div> <%= link_to "Edit", edit_item_path %></div>

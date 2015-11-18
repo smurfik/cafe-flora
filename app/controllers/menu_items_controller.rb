@@ -8,7 +8,7 @@ class MenuItemsController < ApplicationController
     @menu_item.description     = params[:menu_item_description]
     @menu_item.note            = params[:menu_item_note]
     @menu_item.menu_section_id = params[:sec_id]
-    @menu_id                   = Menu.find(params[:menu_id])
+    @menu                      = Menu.find(params[:menu_id])
     if @menu_item.save
       redirect_to add_item_path(params[:menu_id], params[:sec_id])
     else

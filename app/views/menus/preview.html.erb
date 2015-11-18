@@ -24,11 +24,7 @@
           <div class="item-left-block">
             <div class="item-name"><%= i.name.upcase %></div>
             <div class="item-description"><%= i.description %></div>
-            <% if i.note == "[\"false\"]" %>
-              <div> <%=""%></div>
-            <%else%>
-              <div class="item-note"><%= i.note.delete('"').delete('[').delete(']')%></div>
-            <% end %>
+            <div><%= i.clean_note%></div>
           </div>
           <div class="item-right-block">
             <div class="item-price"><%= i.price.to_i %></div>
