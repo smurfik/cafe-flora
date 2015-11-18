@@ -32,16 +32,16 @@
 <div>
   <form action="/<%= @menu.id %>" method="POST">
     <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>" />
-    <input type="hidden" name="_method" value="DELETE">
-    <input type="submit" value="Delete Menu">
+    <input type="hidden" name="_method" value="PATCH">
+    <input type="text" name="menu_name" placeholder="new menu name">
+    <input type="submit" value="Edit Name">
   </form>
 </div>
 
 <div>
   <form action="/<%= @menu.id %>" method="POST">
     <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>" />
-    <input type="hidden" name="_method" value="PATCH">
-    <input type="text" name="menu_name" value="<%= @menu.name %>">
-    <input type="submit" value="Edit Name">
+    <input type="hidden" name="_method" value="DELETE">
+    <input type="submit" value="Delete Menu">
   </form>
 </div>
