@@ -1,20 +1,22 @@
 Rails.application.routes.draw do
 
-  get  "/"                         , to: "menus#index"        , as: :all_menus
-  post  "/"                        , to: "menus#add"
-  # get  "/"                         , to: "menu_sections#index", as: :all_sections
-  get  "/:menu_id"                       , to: "menus#show"         , as: :show_menu
-  get  "/:menu_id/menu_sections/new"     , to: "menu_sections#new"  , as: :new_section
-  get  "/:menu_id/preview"               , to: "menus#preview"      , as: :preview_menu
-  get  "/:menu_id/menu_sections/:sec_id" , to: "menu_sections#show" , as: :show_section
+  get  "/"                                 , to: "menus#index"             , as: :all_menus
+  post  "/"                                , to: "menus#add"
 
-  post "/:menu_id"                       , to: "menu_sections#add"  , as: :add_section
-  post "/:menu_id/menu_sections/:sec_id" , to: "menu_items#add"     , as: :add_item
+  get  "/:menu_id"                         , to: "menus#show"              , as: :show_menu
+  get  "/:menu_id/menu_sections/new"       , to: "menu_sections#new"       , as: :new_section
+  get  "/:menu_id/preview"                 , to: "menus#preview"           , as: :preview_menu
+  get  "/:menu_id/menu_sections/:sec_id"   , to: "menu_sections#show"      , as: :show_section
 
-  delete "/:menu_id"                     , to: "menus#delete_menu"
-  patch "/:menu_id"                      , to: "menus#edit_name"
+  post "/:menu_id"                         , to: "menu_sections#add"       , as: :add_section
+  post "/:menu_id/menu_sections/:sec_id"   , to: "menu_items#add"          , as: :add_item
+
+  delete "/:menu_id"                       , to: "menus#delete_menu"
+  patch "/:menu_id"                        , to: "menus#edit_name"
 
   delete "/:menu_id/menu_sections/:sec_id" , to: "menu_sections#delete"
+  patch "/:menu_id/menu_sections/:sec_id"  , to: "menu_sections#edit_name"
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
