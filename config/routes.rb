@@ -14,6 +14,7 @@ Rails.application.routes.draw do
   delete "/:menu_id"                     , to: "menus#delete_menu"
   patch "/:menu_id"                      , to: "menus#edit_name"
 
+  delete "/:menu_id/menu_sections/:sec_id" , to: "menu_sections#delete"
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

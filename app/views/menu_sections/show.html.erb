@@ -69,3 +69,11 @@ to start entering items using form below -->
 
 <h2><%= link_to "<-- return to main menu", all_menus_path %></h2>
 <h2>Preview<%= link_to @menu.name, preview_menu_path(@menu.id) %></h2>
+
+<div>
+  <form action="/<%=@menu.id%>/menu_sections/<%=@menu_section.id%>" method="POST">
+    <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>" />
+    <input type="hidden" name="_method" value="DELETE">
+    <input type="submit" value="Delete Section">
+  </form>
+</div>

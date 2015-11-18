@@ -32,4 +32,11 @@ class MenuSectionsController < ApplicationController
       render :new
     end
   end
+
+  def delete
+    @menu_section = MenuSection.find(params[:sec_id])
+    @menu_section.destroy
+    redirect_to show_menu_path(params[:menu_id])
+  end
+
 end
