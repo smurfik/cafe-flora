@@ -15,4 +15,16 @@ class MenusController < ApplicationController
     @menu             = Menu.find(params[:menu_id])
   end
 
+  def add
+    @page_content     = "page-content"
+    @menu             = Menu.new
+    @menu.name        = params[:menu_name]
+    if @menu.save
+      redirect_to all_menus_path
+    else
+      @menu          = Menu.all
+      render "menus/show"
+    end
+  end
+
 end

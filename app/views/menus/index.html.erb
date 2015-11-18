@@ -8,3 +8,14 @@
 <span>link to add new menu form will go here</span>
 
 <h1>image, logo, etc. </h1>
+<form action="/" method="POST">
+  <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>" />
+  <fieldset>
+      <legend>New Menu</legend>
+      <label>Menu Name:
+        <input type="text" name="menu_name" placeholder="required"/>
+      </label>
+      <br>
+      <input type="submit" value="Create new Menu"/>
+  </fieldset>
+</form>

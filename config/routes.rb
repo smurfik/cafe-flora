@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
 
   get  "/"                         , to: "menus#index"        , as: :all_menus
+  post  "/"                        , to: "menus#add"
   # get  "/"                         , to: "menu_sections#index", as: :all_sections
   # BELOW :id is menu_id
   get  "/:menu_id"                       , to: "menus#show"         , as: :show_menu
