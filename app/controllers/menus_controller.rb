@@ -27,4 +27,17 @@ class MenusController < ApplicationController
     end
   end
 
+  def delete_menu
+    @menu = Menu.find(params[:menu_id])
+    @menu.destroy
+    redirect_to all_menus_path
+  end
+
+  def edit_name
+    @menu = Menu.find(params[:menu_id])
+    @menu.name = params[:menu_name]
+    @menu.save
+    redirect_to show_menu_path(@menu.id)
+  end
+
 end
