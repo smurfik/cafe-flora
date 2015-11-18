@@ -5,9 +5,17 @@
     <%= link_to m.name, show_menu_path(m.id)%>
   </div>
 <% end  %>
-<span>link to add new menu form will go here</span>
 
-<h1>image, logo, etc. </h1>
+<% if @menu %>
+  <ul>
+    <% @menu.errors.each do |column, error| %>
+      <li>
+        <strong>Menu <%= column.capitalize %>:</strong> <%= error %>
+    </li>
+    <% end %>
+<% end %>
+
+<h3>Add New Menu</h3>
 <form action="/" method="POST">
   <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>" />
   <fieldset>
@@ -19,3 +27,5 @@
       <input type="submit" value="Create new Menu"/>
   </fieldset>
 </form>
+
+<h1>image, logo, etc. </h1>

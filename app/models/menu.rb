@@ -1,5 +1,5 @@
 class Menu < ActiveRecord::Base
-  # validations will go here
+  validates :name, presence: true, uniqueness: true
 
   has_many :menu_sections
 end

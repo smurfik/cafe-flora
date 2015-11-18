@@ -22,8 +22,8 @@ class MenusController < ApplicationController
     if @menu.save
       redirect_to all_menus_path
     else
-      @menu          = Menu.all
-      render "menus/show"
+      @menus          = Menu.all
+      render "menus/index"
     end
   end
 
