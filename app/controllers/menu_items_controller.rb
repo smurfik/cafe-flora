@@ -1,6 +1,7 @@
 class MenuItemsController < ApplicationController
 
   def add
+    @page_content     = "page-content"
     @menu_item                 = MenuItem.new
     @menu_item.name            = params[:menu_item_name]
     @menu_item.price           = params[:menu_item_price]
@@ -18,10 +19,12 @@ class MenuItemsController < ApplicationController
   end
 
   def edit
+    @page_content     = "page-content"
     @menu_section = MenuSection.find(params[:sec_id])
   end
 
   def update
+    @page_content     = "page-content"
   end
 
 end

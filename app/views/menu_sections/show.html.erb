@@ -1,10 +1,10 @@
-<div class="show-name">
+<div >
   <h1> <%= @menu_section.name %></h1>
 </div>
 
-<div class="menu-section">
+<div>
   <% if @menu_section.description != nil %>
-    <div class="section-description"><%= @menu_section.description %></div>
+    <div><%= @menu_section.description %></div>
   <% end %>
 </div>
 
@@ -12,25 +12,25 @@
 created and user is brought to this page, which is empty) there is a prompt
 to start entering items using form below -->
 <% @menu_section.menu_items.each do |i|%>
-  <div class="menu-item">
-    <div class="item-left-block">
-      <div class="item-name" id="full"><%= i.name.upcase%></div>
-      <div class="item-description"><%= i.description%></div>
+  <div>
+    <div>
+      <div id="full"><%= i.name.upcase%></div>
+      <div ><%= i.description%></div>
       <% if i.note == "[\"false\"]" %>
         <div> <%=""%></div>
       <%else%>
-        <div class="item-note"><%= i.note.delete('"').delete('[').delete(']')%></div>
+        <div><%= i.note.delete('"').delete('[').delete(']')%></div>
       <%end%>
     </div>
-    <div class="item-right-block">
+    <div>
       <div> <%= link_to "Edit", edit_item_path %></div>
       <div>Delete</div>
-      <div class="item-price"><%= i.price.to_i%></div>
+      <div><%= i.price.to_i%></div>
     </div>
   </div>
 <% end %>
 
-<div class="separator"> Add a new item to this menu section:</div>
+<div> Add a new item to this menu section:</div>
 
 <% if @menu_item %>
   <ul>
