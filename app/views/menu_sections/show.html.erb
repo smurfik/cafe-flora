@@ -16,8 +16,8 @@ to start entering items using form below -->
     <div>
       <div id="full"><%= i.name.upcase%></div>
       <div ><%= i.description%></div>
-      <% if i.note == "[\"false\"]" %>
-        <div> <%=""%></div>
+      <% if i.note.blank? %>
+        <div> </div>
       <%else%>
         <div><%= i.note.delete('"').delete('[').delete(']')%></div>
       <%end%>
@@ -60,7 +60,6 @@ to start entering items using form below -->
       <br>
       <label>Item Note:
         <ul>
-          <li><input type="hidden" name="menu_item_note[]" value="false"/></li>
           <li><input type="checkbox" name="menu_item_note[]" value="GF"/>GF</li>
           <li><input type="checkbox" name="menu_item_note[]" value="GF*"/>GF*</li>
           <li><input type="checkbox" name="menu_item_note[]" value="SF"/>SF</li>
