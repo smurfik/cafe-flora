@@ -1,31 +1,32 @@
-<h1>Cafe Flora Menu Planner</h1>
+<div class="content-body">
+  <div> <%= image_tag "atrium.png", :class => "bg" %> </div>
 
-<% @menus.each do |m| %>
-  <div>
-    <%= link_to m.name, show_menu_path(m.id)%>
+  <div class="center-box">
+    <li>CAFE FLORA</li>
+    <li class = "divider">––––</li>
+    <li>MENU PLANNER</li>
   </div>
-<% end  %>
 
-<% if @menu %>
-  <ul>
-    <% @menu.errors.each do |column, error| %>
-      <li>
-        <strong>Menu <%= column.capitalize %>:</strong> <%= error %>
-    </li>
-    <% end %>
-<% end %>
+  <% if @menu %>
+    <ul>
+      <% @menu.errors.each do |column, error| %>
+        <li>
+          <strong>Menu <%= column.capitalize %>:</strong> <%= error %>
+      </li>
+      <% end %>
+  <% end %>
 
-<h3>Add New Menu</h3>
-<form action="/" method="POST">
-  <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>" />
-  <fieldset>
-      <legend>New Menu</legend>
-      <label>Menu Name:
-        <input type="text" name="menu_name" placeholder="required"/>
-      </label>
-      <br>
-      <input type="submit" value="Create new Menu"/>
-  </fieldset>
-</form>
+  <h3>Add New Menu</h3>
+  <form action="/" method="POST">
+    <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>" />
+    <fieldset>
+        <legend>New Menu</legend>
+        <label>Menu Name:
+          <input type="text" name="menu_name" placeholder="required"/>
+        </label>
+        <br>
+        <input type="submit" value="Create new Menu"/>
+    </fieldset>
+  </form>
 
-<h1>image, logo, etc. </h1>
+</div>

@@ -1,0 +1,22 @@
+.content-body {
+  height: 100%;
+  width: 100%;
+  position: fixed;
+}
+
+.content-body .bg {
+  background: image-url("fritters.jpg") no-repeat center center fixed;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  opacity: .45;
+  z-index: -1;
+}
+
+.content-body .center-box {
+  position: relative;
+  top: 33%;
+  left: 33%;
+  width: 400px;
+  background-color: rgba(124, 126, 249, 0.4);
+}

@@ -1,3 +1,30 @@
 .page-content {
 
 }
+
+.header {
+  height: 78px;
+  width: 100%;
+}
+
+.header .logo {
+  float: left;
+  height: 72px;
+  margin-left: 2px;
+  margin-top: 2px;
+}
+
+.header .links {
+  position: relative;
+  float: right;
+  height: 73px;
+  margin-right: 20px;
+}
+
+.header .links a {
+  display: inline-block;
+  width: 140px;
+  font-size: 20px;
+  padding: 25px 0;
+  text-align: center;
+}
