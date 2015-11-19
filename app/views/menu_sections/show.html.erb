@@ -21,7 +21,7 @@ to start entering items using form below -->
           <input type="hidden" name="_method"            value="PATCH">
           <input type="text"   name="item[name]"         value="<%=i.name%>">
           <input type="text"   name="item[description]"  value="<%=i.description %>">
-          <input type="text"   name="item[note]"         value="<%=i.note%>">
+          <input type="text"   name="item[note]"         value="<%=i.clean_note%>">
           <input type="text"   name="item[price]"        value="<%=i.price%>">
           <input type="submit" value="Edit Item">
         </form>
