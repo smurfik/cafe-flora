@@ -70,16 +70,14 @@ to start entering items using form below -->
 <h4><%= link_to "<-- return to main menu", all_menus_path %></h4>
 <h4>Preview<%= link_to @menu.name, preview_menu_path(@menu.id) %></h4>
 
-<div>
+<div class="footer">
   <form action="/<%=@menu.id%>/menu_sections/<%=@menu_section.id%>" method="POST">
     <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>" />
     <input type="hidden" name="_method" value="PATCH">
     <input type="text" name="menu_section_name" placeholder="new name"/>
     <input type="submit" value="Edit Name">
   </form>
-</div>
 
-<div>
   <form action="/<%=@menu.id%>/menu_sections/<%=@menu_section.id%>" method="POST">
     <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>" />
     <input type="hidden" name="_method" value="DELETE">
