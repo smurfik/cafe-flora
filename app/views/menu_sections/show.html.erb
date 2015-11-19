@@ -82,9 +82,6 @@ to start entering items using form below -->
   </fieldset>
 </form>
 
-<h3>Return back to <%= link_to @menu.name, show_menu_path(@menu.id) %></h3>
-
-<h4><%= link_to "<-- return to main menu", all_menus_path %></h4>
 <h4>Preview<%= link_to @menu.name, preview_menu_path(@menu.id) %></h4>
 
 <div class="footer">

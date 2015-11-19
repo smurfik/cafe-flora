@@ -25,10 +25,6 @@
   Preview <%= link_to @menu.name, preview_menu_path(@menu.id) %>
 </p>
 
-<p>
-  <%= link_to "return to homepage", all_menus_path %>
-</p>
-
 <div>
   <form action="/<%= @menu.id %>" method="POST">
     <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>" />

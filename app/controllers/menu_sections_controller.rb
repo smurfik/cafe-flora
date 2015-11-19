@@ -12,6 +12,7 @@ class MenuSectionsController < ApplicationController
     @menu                     = Menu.find(params[:menu_id])
     @page_content             = "page-content"
     @header                   = "header"
+    @menus                    = Menu.all
   end
 
   def new
@@ -19,6 +20,7 @@ class MenuSectionsController < ApplicationController
     @menu_section             = MenuSection.new
     @menu_id                  = params[:menu_id]
     @header                   = "header"
+    @menus                    = Menu.all
   end
 
   def add
