@@ -7,22 +7,26 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-  <div class="<%= @header %>">
-    <div>
-      <%= link_to image_tag("logo.png", :class => "logo"), all_menus_path %>
+  <div class="content-wrapper">
+    <div class="<%= @header %>">
+      <div>
+        <%= link_to image_tag("logo.png", :class => "logo"), all_menus_path %>
+      </div>
+      <div class="links">
+        <% @menus.each do |m| %>
+          <%= link_to m.name, show_menu_path(m.id)%>
+        <% end  %>
+        <%= link_to "New Menu", "/#" %>
+      </div>
     </div>
-    <div class="links">
-      <% @menus.each do |m| %>
-        <%= link_to m.name, show_menu_path(m.id)%>
-      <% end  %>
-      <%= link_to "New Menu", "/#" %>
+
+    <div class= "<%= @page_content %>" >
+      <%= yield %>
     </div>
+
+    <div class=" <%= @footer %>">
+      <span>FOOTER CONTENTS</span>
     </div>
   </div>
-
-  <div class= "<%= @page_content %>" >
-    <%= yield %>
-  </div>
-
 </body>
 </html>

@@ -4,19 +4,23 @@ class MenusController < ApplicationController
     @menus            = Menu.all
     @page_content     = "page-content"
     @header           = "header"
+    @footer           = "footer"
   end
 
   def show
     @menu             = Menu.find(params[:menu_id])
     @page_content     = "page-content"
     @header           = "header"
+    @footer           = "footer"
     @menus            = Menu.all
   end
 
   def preview
-    @page_content     = "preview page-content"
+    @menus            = Menu.all
     @menu             = Menu.find(params[:menu_id])
+    @page_content     = "preview page-content"
     @header           = "header-preview"
+    @footer           = "footer-preview"
   end
 
   def add
