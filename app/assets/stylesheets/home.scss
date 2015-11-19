@@ -5,7 +5,6 @@
 }
 
 .content-body .bg {
-  background: image-url("fritters.jpg") no-repeat center center fixed;
   height: 100%;
   width: 100%;
   position: absolute;
@@ -19,4 +18,19 @@
   left: 33%;
   width: 400px;
   background-color: rgba(124, 126, 249, 0.4);
+  font-family: "Gill Sans", "sans-serif";
+}
+
+.center-box li {
+  list-style: none;
+  font-size: 35px;
+  text-align: center;
+}
+
+fieldset {
+  position: fixed;
+  left: 33%;
+  right: 33%;
+  bottom: 50px;
+  font-weight: 600;
 }

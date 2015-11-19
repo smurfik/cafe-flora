@@ -16,17 +16,18 @@
       <% end %>
   <% end %>
 
-  <h3>Add New Menu</h3>
-  <form action="/" method="POST">
-    <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>" />
-    <fieldset>
-        <legend>New Menu</legend>
-        <label>Menu Name:
-          <input type="text" name="menu_name" placeholder="required"/>
-        </label>
-        <br>
-        <input type="submit" value="Create new Menu"/>
-    </fieldset>
-  </form>
+  <div id="home-form">
+    <form action="/" method="POST">
+      <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>" />
+      <fieldset>
+          <legend>New Menu</legend>
+          <label>Menu Name:
+            <input type="text" name="menu_name" placeholder="required"/>
+          </label>
+          <br>
+          <input type="submit" value="Create new Menu"/>
+      </fieldset>
+    </form>
+  </div>
 
 </div>
