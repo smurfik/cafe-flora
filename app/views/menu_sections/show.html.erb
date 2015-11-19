@@ -7,19 +7,36 @@
 <!-- add conditional: if menu section has no items (i.e. when a new one is
 created and user is brought to this page, which is empty) there is a prompt
 to start entering items using form below -->
-<% @menu_section.menu_items.each do |i|%>
-  <div>
+<% @menu_section.menu_items.sort.each do |i|%>
+  <div class="item-display">
     <div>
       <div><%= i.name.upcase%></div>
       <div ><%= i.description%></div>
       <div><%= i.clean_note%></div>
-    </div>
-    <div>
-      <div>Edit</div>
-      <div>Delete</div>
       <div><%= i.price.to_i%></div>
+
+      <div class="item-modify">
+        <form action="/<%=i.menu_section.menu_id%>/menu_sections/<%=i.menu_section_id%>/items/<%=i.id%>" method="POST">
+          <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>" />
+          <input type="hidden" name="_method"            value="PATCH">
+          <input type="text"   name="item[name]"         value="<%=i.name%>">
+          <input type="text"   name="item[description]"  value="<%=i.description %>">
+          <input type="text"   name="item[note]"         value="<%=i.note%>">
+          <input type="text"   name="item[price]"        value="<%=i.price%>">
+          <input type="submit" value="Edit Item">
+        </form>
+
+        <form action="/<%=i.menu_section.menu_id%>/menu_sections/<%=i.menu_section_id%>/items/<%=i.id%>" method="POST">
+          <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>" />
+          <input type="hidden" name="_method" value="DELETE">
+          <input type="submit" value="Delete Item">
+        </form>
+        </div>
+
+      </div>
     </div>
   </div>
+  <br>
 <% end %>
 
 <div> Add a new item to this menu section:</div>

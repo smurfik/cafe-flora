@@ -18,4 +18,19 @@ class MenuItemsController < ApplicationController
     end
   end
 
+  def edit_item
+    @menu_item             = MenuItem.find(params[:item_id])
+    @menu_item.name        = params[:item][:name]
+    @menu_item.description = params[:item][:description]
+    @menu_item.note        = params[:item][:note]
+    @menu_item.price       = params[:item][:price]
+    @menu_item.save
+    redirect_to show_section_path(params[:menu_id], params[:sec_id])
+  end
+
+  def delete_item
+    @menu_item             = MenuItem.find(params[:item_id])
+    @menu_item.destroy
+    redirect_to show_section_path(params[:menu_id], params[:sec_id])
+  end
 end
