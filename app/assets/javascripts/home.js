@@ -2,7 +2,8 @@ $(document).ready(function() {
 
   $('#home-form').hide();
 
-  $('a').last().click(function(){
+  $('#add').last().click(function(){
+    $(this).hide();
     $('#home-form').show();
   });
 

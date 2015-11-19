@@ -1,10 +1,13 @@
-  <div> <%= image_tag "atrium.png", :class => "bg" %> </div>
+<div> <%= image_tag "atrium.png", :class => "bg" %> </div>
 
-  <div class="center-box">
-    <li>CAFE FLORA</li>
-    <li class = "divider">––––</li>
-    <li>MENU PLANNER</li>
-  </div>
+<div class="center-box">
+  <li>CAFE FLORA</li>
+  <li class = "divider">––––</li>
+  <li>MENU PLANNER</li>
+</div>
+
+
+<%= content_for :footer do %>
 
   <% if @menu %>
     <ul>
@@ -15,16 +18,12 @@
       <% end %>
   <% end %>
 
-  <div id="home-form">
+  <div id="add" class="btn">Add Menu</div>
+  <div id="home-form" class="form">
     <form action="/" method="POST">
       <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>" />
-      <fieldset>
-          <legend>New Menu</legend>
-          <label>Menu Name:
-            <input type="text" name="menu_name" placeholder="required"/>
-          </label>
-          <br>
-          <input type="submit" value="Create new Menu"/>
-      </fieldset>
+      <input type="text" name="menu_name" placeholder="menu name required"/>
+      <input type="submit" value="New Menu"/>
     </form>
   </div>
+<% end %>
