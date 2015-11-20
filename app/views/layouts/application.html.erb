@@ -15,7 +15,6 @@
       <% @menus.each do |m| %>
         <%= link_to m.name, show_menu_path(m.id)%>
       <% end  %>
-      <%= link_to "New Menu", "/#" %>
     </div>
   </div>
 
@@ -24,7 +23,7 @@
   </div>
 
   <div class=" <%= @footer %>">
-    <span>FOOTER CONTENTS</span>
+    <%= yield :footer %>
   </div>
 </body>
 </html>

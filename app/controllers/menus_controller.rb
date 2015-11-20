@@ -31,6 +31,9 @@ class MenusController < ApplicationController
       redirect_to all_menus_path
     else
       @menus          = Menu.all
+      @page_content     = "page-content"
+      @header           = "header"
+      @footer           = "footer"
       render "menus/index"
     end
   end
