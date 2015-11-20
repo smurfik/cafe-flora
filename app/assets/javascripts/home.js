@@ -6,6 +6,12 @@ $(document).ready(function() {
 
   $('.page-content').click(function(){
     $('#add').show();
+    $('#home-form').hide();
+    if ($('#error').text() == "Menu name can't be blank") {
+      $('#add').show();
+      $('#error').hide();
+      $(".footer ul").css({marginTop: 0});
+    };
   });
 
   if ($('#error').text() == "Menu name can't be blank") {
@@ -16,6 +22,7 @@ $(document).ready(function() {
 
   $('#add').last().click(function(){
     $(this).hide();
+    $(".footer .form").css({padding: 20});
     $('#home-form').show();
   });
 
