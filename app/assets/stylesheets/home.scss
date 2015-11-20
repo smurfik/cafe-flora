@@ -6,7 +6,7 @@
 }
 
 .center-box {
-  position: relative;
+  position: fixed;
   top: 33%;
   left: 33%;
   width: 400px;
@@ -38,4 +38,8 @@
 
 .footer .form-text {
   display: inline-block;
+}
+
+.footer ul {
+  margin-top: 10px;
 }

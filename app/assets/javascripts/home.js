@@ -1,6 +1,14 @@
 $(document).ready(function() {
 
-  $('#home-form').hide();
+  if ($('#add').text() == "Add Menu") {
+    $('#home-form').hide();
+  };
+
+  if ($('#error').text() == "Menu name can't be blank") {
+    $('#add').last().hide();
+    $('#home-form').show();
+    $(".footer .form").css({padding: 0});
+  };
 
   $('#add').last().click(function(){
     $(this).hide();

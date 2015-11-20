@@ -13,8 +13,8 @@
     <ul>
       <% @menu.errors.each do |column, error| %>
         <li>
-          <strong>Menu <%= column.capitalize %>:</strong> <%= error %>
-      </li>
+          <div id="error"><strong>Menu <%= column%> <%= error %></strong></div>
+        </li>
       <% end %>
   <% end %>
 
