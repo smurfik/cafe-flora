@@ -19,18 +19,17 @@
   </div>
 </div>
 
-  
-<div class="to-go-in-footer"
-  <h3><strong>Everything below here will eventually go into footer</strong></h3>
-  <p>
-    Add a new section to <%= link_to @menu.name, new_section_path(@menu.id)%>
-  </p>
+<%= content_for :footer do %>
 
-  <p>
-    Preview <%= link_to @menu.name, preview_menu_path(@menu.id) %>
-  </p>
+  <div class="show-container">
+    <ul>
+      <li id="preview-menu" class="footer-button"><%= link_to "Preview", preview_menu_path(@menu.id), class: "btn"%></li>
+      <li><%= link_to "Add Section", new_section_path(@menu.id), class: "btn"%></li>
+      <li><div class="btn">Delete</div></li>
+    </ul>
+  </div>
 
-  <div>
+  <div class="edit-name">
     <form action="/<%= @menu.id %>" method="POST">
       <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>" />
       <input type="hidden" name="_method" value="PATCH">
@@ -39,11 +38,11 @@
     </form>
   </div>
 
-  <div>
+  <div class="delete">
     <form action="/<%= @menu.id %>" method="POST">
       <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>" />
       <input type="hidden" name="_method" value="DELETE">
       <input type="submit" value="Delete Menu">
     </form>
   </div>
-</div>
+<% end %>
