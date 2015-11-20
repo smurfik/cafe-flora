@@ -36,7 +36,11 @@
 $(document).ready(function() {
 
   $(".item-details").hide();
+  var top_sec = $(".section-name").first().attr("class").split(' ')[1];
+  $(".item-details"+"."+ top_sec).show();
+
   $(".section-name").click(function () {
+  $(".item-details").hide();
   var sec = ($(this).attr("class").split(' ')[1]);
   $(".item-details"+"."+ sec).toggle();
   return false;
