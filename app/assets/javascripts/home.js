@@ -4,6 +4,10 @@ $(document).ready(function() {
     $('#home-form').hide();
   };
 
+  $('.page-content').click(function(){
+    $('#add').show();
+  });
+
   if ($('#error').text() == "Menu name can't be blank") {
     $('#add').last().hide();
     $('#home-form').show();
