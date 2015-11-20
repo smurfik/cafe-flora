@@ -1,0 +1,39 @@
+.edit-window {
+  height: 100%;
+  position: relative;
+}
+
+.section-container {
+  width: 18%;
+  height: 100%;
+  float: left;
+  display: inline-block;
+  font-size: 28px;
+  border-right: 1px solid black;
+  margin-right: 10px;
+}
+
+  .section-name {
+    margin-bottom: 10px;
+  }
+
+.item-container {
+  width: 78%;
+  display: inline-block;
+  font-size: 20px;
+}
+
+.item-container ul {
+  margin-top: 0;
+}
+
+  .item-details {
+
+  }
+
+.to-go-in-footer {
+  margin-top: 80px;
+  display: inline-block;
+  float: left;
+  clear: left;
+}

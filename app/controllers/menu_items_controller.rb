@@ -2,6 +2,7 @@ class MenuItemsController < ApplicationController
 
   def add
     @page_content     = "page-content"
+    @menus                     = Menu.all 
     @menu_item                 = MenuItem.new
     @menu_item.name            = params[:menu_item_name]
     @menu_item.price           = params[:menu_item_price]
