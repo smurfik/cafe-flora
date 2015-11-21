@@ -1,27 +1,29 @@
-<form action="/<%=@menu_id%>" method="POST">
-  <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>" />
-  <fieldset>
-      <legend>New Menu Section</legend>
-      <label>Section Name:
-        <input type="text" name="menu_section_name" placeholder="required"/>
-      </label>
-      <br>
-      <label>Section Description:
-        <input type="text" name="menu_section_description"/>
-      </label>
-      <br>
-      <input type="submit" value="Create new section"/>
-  </fieldset>
-</form>
+<div class="new page-content">
+  <h3>Add New Menu Section</h3>
+  <form action="/<%=@menu_id%>" method="POST">
+    <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>" />
+    <fieldset>
+        <label>Section Name:
+          <input type="text" name="menu_section_name" placeholder="required"/>
+        </label>
+        <br>
+        <label>Section Description:
+          <input type="text" name="menu_section_description"/>
+        </label>
+        <br>
+        <input type="submit" value="Create new section"/>
+    </fieldset>
+  </form>
 
-<% if @menu_section.errors.any? %>
-  <% @menu_section.errors.each do |column, message| %>
-    <ul>
-      <li>
-        <strong>Section <%= column.capitalize %>:</strong> <%= message %>
-      </li>
-    </ul>
+  <% if @menu_section.errors.any? %>
+    <% @menu_section.errors.each do |column, message| %>
+      <ul>
+        <li>
+          <strong>Section <%= column.capitalize %>:</strong> <%= message %>
+        </li>
+      </ul>
+    <% end %>
   <% end %>
-<% end %>
 
-<h2><%= link_to "<-- cancel and return to main menu", "/" %></h2>
+  <h2><%= link_to "<-- cancel and return to main menu", "/" %></h2>
+</div>

@@ -22,6 +22,7 @@ class MenuSectionsController < ApplicationController
     @menu_id                  = params[:menu_id]
     @header                   = "header"
     @footer                   = "footer"
+    @page_content             = "page-content"
     @menus                    = Menu.all
   end
 
@@ -31,6 +32,10 @@ class MenuSectionsController < ApplicationController
     @menu_section.name        = params[:menu_section_name]
     @menu_section.description = params[:menu_section_description]
     @menu_section.menu_id     = params[:menu_id]
+    @page_content             = "page-content"
+    @header                   = "header"
+    @footer                   = "footer"
+    @menus                    = Menu.all
     if @menu_section.save
       redirect_to add_section_path(@menu_section.menu_id)
     else
