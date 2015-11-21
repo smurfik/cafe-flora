@@ -29,7 +29,7 @@ to start entering items using form below -->
         <form action="/<%=i.menu_section.menu_id%>/menu_sections/<%=i.menu_section_id%>/items/<%=i.id%>" method="POST">
           <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>" />
           <input type="hidden" name="_method" value="DELETE">
-          <input type="submit" value="Delete Item">
+          <input type="submit" value="Delete Item" data-confirm="Are you sure?">
         </form>
         </div>
 
@@ -84,7 +84,7 @@ to start entering items using form below -->
 
 <h4>Preview<%= link_to @menu.name, preview_menu_path(@menu.id) %></h4>
 
-<div class="footer">
+<div>
   <form action="/<%=@menu.id%>/menu_sections/<%=@menu_section.id%>" method="POST">
     <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>" />
     <input type="hidden" name="_method" value="PATCH">
@@ -95,6 +95,6 @@ to start entering items using form below -->
   <form action="/<%=@menu.id%>/menu_sections/<%=@menu_section.id%>" method="POST">
     <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>" />
     <input type="hidden" name="_method" value="DELETE">
-    <input type="submit" value="Delete Section">
+    <input type="submit" value="Delete Section" data-confirm="Are you sure?">
   </form>
 </div>

@@ -19,15 +19,7 @@
   </div>
 </div>
 
-<%= content_for :footer do %>
-
-  <div class="show-container">
-    <ul>
-      <li id="preview-menu" class="footer-button"><%= link_to "Preview", preview_menu_path(@menu.id), class: "btn"%></li>
-      <li><%= link_to "Add Section", new_section_path(@menu.id), class: "btn"%></li>
-      <li><div class="btn">Delete</div></li>
-    </ul>
-  </div>
+  <div class="delete"><%= link_to "Add Section", new_section_path(@menu.id)%></div>
 
   <div class="edit-name">
     <form action="/<%= @menu.id %>" method="POST">
@@ -42,7 +34,13 @@
     <form action="/<%= @menu.id %>" method="POST">
       <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>" />
       <input type="hidden" name="_method" value="DELETE">
-      <input type="submit" value="Delete Menu">
+      <input type="submit" value="Delete Menu" data-confirm="Are you sure?">
     </form>
   </div>
+
+<%= content_for :footer do %>
+
+  <div class="show-container" id="preview-menu" class="footer-button"><%= link_to "Preview", preview_menu_path(@menu.id), class: "btn"%>
+  </div>
+
 <% end %>
