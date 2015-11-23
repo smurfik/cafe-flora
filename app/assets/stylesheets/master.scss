@@ -3,8 +3,8 @@ body {
 }
 
 .page-content {
-  min-height: calc(100vh - 80px - 60px);
-  background-color: rgba(0, 0, 0, 0.07);
+  min-height: calc(100vh - 81px - 60px);
+  // background-color: rgba(0, 0, 0, 0.07);
   z-index: -2;
 }
 
@@ -12,6 +12,9 @@ body {
   height: 80px;
   width: 100%;
   font-family: "Gill Sans", sans-serif;
+  background-color: rgba(0, 0, 0, 0.06);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.74);
+  // border-bottom: 1px solid rgba(0, 0, 0, 0.15);
 }
 
 .header .logo {
@@ -34,7 +37,7 @@ body {
   padding: 25px 25px;
   text-align: center;
   text-decoration: none;
-  color: rgba(0, 0, 0, 0.6);
+  color: rgba(0, 0, 0, 0.7);
 }
 
 .header .links a:hover {

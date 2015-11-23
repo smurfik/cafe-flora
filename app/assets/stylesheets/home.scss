@@ -1,6 +1,9 @@
 .bg {
   width: 100%;
-  position: fixed;
+  // position: fixed;
+  position: absolute;
+  top: 0;
+  left: 0;
   opacity: .40;
   z-index: -1;
 }
@@ -18,7 +21,7 @@
   list-style: none;
   font-size: 50px;
   text-align: center;
-  color: rgba(255, 255, 255, 0.7);
+  color: rgba(255, 255, 255, 0.75);
 }
 
 .center-box li:first-child {
@@ -45,6 +48,7 @@
 
 #add {
   cursor: pointer;
+  color: rgba(255, 255, 255, 0.6);
 }
 
 .footer .form {
