@@ -10,9 +10,9 @@
   <div class="item-container">
     <ul><% @menu.menu_items.each do |i|%>
         <li class="item-details section-<%=i.menu_section_id%>">
-          <%= i.name.upcase %>
+          <strong><%= i.name.upcase %></strong>
           <%= i.description %>
-          <%= i.price.to_i %>
+          $<%= i.price.to_i %>
           <%= i.clean_note %>
         </li>
       <% end  %>

@@ -1,23 +1,34 @@
 .bg {
   width: 100%;
   position: fixed;
-  opacity: .45;
+  opacity: .40;
   z-index: -1;
 }
 
 .center-box {
   position: fixed;
   top: 33%;
-  left: 36%;
-  width: 400px;
-  background-color: rgba(124, 126, 249, 0.4);
-  font-family: "Gill Sans", "sans-serif";
+  left: 32%;
+  width: 500px;
+  background-color: rgba(124, 126, 249, 0.7);
+  font-family: "Futura", "sans-serif";
 }
 
 .center-box li {
   list-style: none;
-  font-size: 35px;
+  font-size: 50px;
   text-align: center;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.center-box li:first-child {
+  padding-top: 15px;
+  padding-bottom: 25px;
+}
+
+.center-box li:last-child {
+  padding-top: 25px;
+  padding-bottom: 15px;
 }
 
 .btn {

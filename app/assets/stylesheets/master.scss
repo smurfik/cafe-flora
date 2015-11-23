@@ -4,18 +4,21 @@ body {
 
 .page-content {
   min-height: calc(100vh - 80px - 60px);
+  background-color: rgba(0, 0, 0, 0.07);
+  z-index: -2;
 }
 
 .header {
   height: 80px;
   width: 100%;
+  font-family: "Gill Sans", sans-serif;
 }
 
 .header .logo {
   float: left;
-  height: 72px;
-  margin-left: 2px;
-  margin-top: 2px;
+  height: 64px;
+  margin-left: 10px;
+  margin-top: 8px;
 }
 
 .header .links {
@@ -27,10 +30,15 @@ body {
 
 .header .links a {
   display: inline-block;
-  width: 140px;
   font-size: 20px;
-  padding: 25px 0;
+  padding: 25px 25px;
   text-align: center;
+  text-decoration: none;
+  color: rgba(0, 0, 0, 0.6);
+}
+
+.header .links a:hover {
+  color: rgb(0, 0, 0);
 }
 
 li {
@@ -44,5 +52,5 @@ li {
   left: 0px;
   width:   100%;
   height:  60px;
-  background-color: #2d42ac;
+  background-color: rgba(69, 72, 251, 0.8);
 }

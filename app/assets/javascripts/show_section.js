@@ -9,8 +9,8 @@ $(document).ready(function() {
   $(".item-forms"+"."+ top_sec_id).show();
 
   $(".section-name").hover(function () {
-    $(".section-name").css('background-color', 'white');
-    $(this).css('background-color', 'rgba(0, 0, 0, 0.10)')
+    $(".section-name").css('background-color', 'transparent');
+    $(this).css('background-color', 'rgba(0, 0, 0, 0.10)');
     $(".item-forms").hide();
     $(".item-details").hide();
     var sec_id = ($(this).attr("class").split(' ')[1]);

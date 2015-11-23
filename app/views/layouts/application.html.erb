@@ -13,7 +13,7 @@
     </div>
     <div class="links">
       <% @menus.each do |m| %>
-        <%= link_to m.name, show_menu_path(m.id)%>
+        <span class="header-menu-name"><%= link_to m.name, show_menu_path(m.id)%></span>
       <% end  %>
     </div>
   </div>
