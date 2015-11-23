@@ -11,6 +11,9 @@
     <div>
       <%= link_to image_tag("logo.png", :class => "logo"), all_menus_path %>
     </div>
+    <div class="title">
+       Cafe Flora Menu Planner
+    </div>
     <div class="links">
       <% @menus.each do |m| %>
         <span class="header-menu-name"><%= link_to m.name, show_menu_path(m.id)%></span>

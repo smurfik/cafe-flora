@@ -15,11 +15,33 @@
           $<%= i.price.to_i %>
           <%= i.clean_note %>
         </li>
+
+        <div class="item-forms section-<%=i.menu_section_id%>">
+          <div class="item-modify">
+            <form action="/<%=i.menu_section.menu_id%>/menu_sections/<%=i.menu_section_id%>/items/<%=i.id%>" method="POST" class="item-form">
+              <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>" />
+              <input type="hidden" name="_method"            value="PATCH">
+              <input type="text"   name="item[name]"         value="<%=i.name%>">
+              <input type="text"   name="item[description]"  value="<%=i.description %>">
+              <input type="text"   name="item[note]"         value="<%=i.clean_note%>">
+              <input type="text"   name="item[price]"        value="<%=i.price%>">
+              <input type="submit" value="Edit Item">
+            </form>
+
+          <form action="/<%=i.menu_section.menu_id%>/menu_sections/<%=i.menu_section_id%>/items/<%=i.id%>" method="POST" class="item-form">
+            <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>" />
+            <input type="hidden" name="_method" value="DELETE">
+            <input type="submit" value="Delete Item" data-confirm="Are you sure?">
+          </form>
+          </div>
+        </div>
+
       <% end  %>
     </ul>
   </div>
 </div>
 
+<div class="to-go-in-footer">
   <div class="delete"><%= link_to "Add Section", new_section_path(@menu.id)%></div>
 
   <div class="edit-name">
@@ -38,6 +60,8 @@
       <input type="submit" value="Delete Menu" data-confirm="Are you sure?">
     </form>
   </div>
+</div>
+
 
 <%= content_for :footer do %>
 

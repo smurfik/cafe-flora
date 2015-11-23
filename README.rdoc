@@ -1,3 +1,7 @@
+**This is Daniel's copy for code review**
+
+*~*~*~*~
+
 Updates made by Daniel on 11/11/15:
 
 [x] - added /new view, associated routes & menu_section_controller method(s)

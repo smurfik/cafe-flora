@@ -10,7 +10,7 @@ class MenusController < ApplicationController
   def show
     @menu             = Menu.find(params[:menu_id])
     @page_content     = "page-content"
-    @header           = "header"
+    @header           = "header header-menu"
     @footer           = "footer"
     @menus            = Menu.all
   end
