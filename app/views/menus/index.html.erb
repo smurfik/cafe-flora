@@ -1,0 +1,29 @@
+<div> <%= image_tag "atrium.png", :class => "bg" %> </div>
+
+<div class="center-box">
+  <li>CAFE FLORA</li>
+  <!-- <li class = "divider">––––</li> -->
+  <li>MENU PLANNER</li>
+</div>
+
+
+<%= content_for :footer do %>
+
+  <% if @menu %>
+    <ul>
+      <% @menu.errors.each do |column, error| %>
+        <li>
+          <div id="error"><strong>Menu <%= column%> <%= error %></strong></div>
+        </li>
+      <% end %>
+  <% end %>
+
+  <div id="add" class="btn">Add Menu</div>
+  <div id="home-form" class="form">
+    <form action="/" method="POST">
+      <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>" />
+      <input type="text" name="menu_name" placeholder="menu name required"/>
+      <input type="submit" value="New Menu"/>
+    </form>
+  </div>
+<% end %>
