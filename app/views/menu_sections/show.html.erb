@@ -1,0 +1,109 @@
+<div class="edit-window">
+  <div class="section-container">
+    <% @menu.menu_sections.each do |s| %>
+      <li class="section-name section-<%=s.id%>">
+        <%= link_to s.name, show_section_path(:menu_id => @menu.id, :sec_id => s.id) %>
+      </li>
+    <% end %>
+  </div>
+
+  <div class="item-container">
+    <ul><% @menu.menu_items.each do |i|%>
+      <li class="item-details section-<%=i.menu_section_id%>">
+        <%= i.name.upcase%>
+        <%= i.description%>
+        <%= i.price.to_i%>
+        <%= i.clean_note%>
+      </li>
+
+      <div class="item-forms section-<%=i.menu_section_id%>">
+        <div class="item-modify">
+          <form action="/<%=i.menu_section.menu_id%>/menu_sections/<%=i.menu_section_id%>/items/<%=i.id%>" method="POST">
+            <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>" />
+            <input type="hidden" name="_method"            value="PATCH">
+            <input type="text"   name="item[name]"         value="<%=i.name%>">
+            <input type="text"   name="item[description]"  value="<%=i.description %>">
+            <input type="text"   name="item[note]"         value="<%=i.clean_note%>">
+            <input type="text"   name="item[price]"        value="<%=i.price%>">
+            <input type="submit" value="Edit Item">
+          </form>
+
+        <form action="/<%=i.menu_section.menu_id%>/menu_sections/<%=i.menu_section_id%>/items/<%=i.id%>" method="POST">
+          <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>" />
+          <input type="hidden" name="_method" value="DELETE">
+          <input type="submit" value="Delete Item" data-confirm="Are you sure?">
+        </form>
+        </div>
+      </div>
+
+    <% end %>
+    </ul>
+  </div>
+</div>
+
+
+
+
+
+<div class="to-go-in-footer">
+  <h2>This will all go in footer:</h2>
+    <div> Add a new item to this menu section:</div>
+
+    <% if @menu_item %>
+      <ul>
+        <% @menu_item.errors.each do |column, error| %>
+          <li>
+            <strong>Item <%= column.capitalize %>:</strong> <%= error %>
+        </li>
+        <% end %>
+    <% end %>
+
+    <form action="/<%=@menu.id%>/menu_sections/<%=@menu_section.id%>" method="POST">
+      <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>" />
+      <fieldset>
+        <legend>New Menu Item</legend>
+          <label>Item Name:
+            <input type="text" name="menu_item_name" placeholder="required"/>
+          </label>
+          <br>
+          <label>Item Price:
+            <input type="text" name="menu_item_price" placeholder="00.00"/>
+          </label>
+          <br>
+          <label>Item Description:
+            <!-- this could also be a <textarea> instead -->
+            <input type="text" name="menu_item_description"/>
+          </label>
+          <br>
+          <label>Item Note:
+            <ul>
+              <li><input type="checkbox" name="menu_item_note[]" value="GF"/>GF</li>
+              <li><input type="checkbox" name="menu_item_note[]" value="GF*"/>GF*</li>
+              <li><input type="checkbox" name="menu_item_note[]" value="SF"/>SF</li>
+              <li><input type="checkbox" name="menu_item_note[]" value="SF*"/>SF*</li>
+              <li><input type="checkbox" name="menu_item_note[]" value="V"/>V</li>
+              <li><input type="checkbox" name="menu_item_note[]" value="V*"/>V*</li>
+            </ul>
+          </label>
+          <br>
+          <input type="submit" value="Create new menu item"/>
+      </fieldset>
+    </form>
+
+    <h4>Preview<%= link_to @menu.name, preview_menu_path(@menu.id) %></h4>
+  </div>
+
+<div>
+  <form action="/<%=@menu.id%>/menu_sections/<%=@menu_section.id%>" method="POST">
+    <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>" />
+    <input type="hidden" name="_method" value="PATCH">
+    <input type="text" name="menu_section_name" placeholder="new name"/>
+    <input type="submit" value="Edit Name">
+  </form>
+
+  <form action="/<%=@menu.id%>/menu_sections/<%=@menu_section.id%>" method="POST">
+    <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>" />
+    <input type="hidden" name="_method" value="DELETE">
+    <input type="submit" value="Delete Section" data-confirm="Are you sure?">
+  </form>
+</div>

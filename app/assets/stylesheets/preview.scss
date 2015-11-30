@@ -1,0 +1,174 @@
+ul {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+body {
+  font-family: "Iowan Old Style";
+  margin: 0;
+}
+
+a:visited{
+  color: blue;
+}
+
+.top-image {
+  width: 100%;
+  text-align: center;
+}
+
+.preview.page-content {
+  margin: 0 auto;
+  width: 800px;
+  background-color: rgba(210, 207, 177, 0.50);
+}
+
+.page-content:after{
+  content: "";
+  display: block;
+  clear: both;
+}
+
+.menu-name {
+  text-align: center;
+  text-decoration: underline;
+  font-size: 36px;
+}
+
+.preview-menu-name {
+  margin: 0;
+  text-align: center;
+  padding: 20px 0;
+}
+
+.preview-section {
+  display: block;
+  padding-bottom: 40px;
+}
+
+.rotated-name-container {
+  display: inline-block;
+  float: left;
+  clear: left;
+}
+
+  .preview-section-name {
+    margin: 0;
+  }
+
+  .preview-section-name.rotate {
+    -webkit-transform: rotate(-90deg);
+    -moz-transform: rotate(-90deg);
+    -ms-transform: rotate(-90deg);
+    -o-transform: rotate(-90deg);
+    filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=3);
+    display: inline-block;
+    float: left;
+    font-size: 24px;
+    width: 100px;
+    position: relative;
+    top: 55px;
+    margin-right: 20px;
+  }
+
+.preview-section-container {
+  display: inline-block;
+}
+
+.section-description {
+  font-weight: bold;
+  font-size:   18px;
+  min-width: 650px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+  .menu-section .section-name {
+    text-align: center;
+  }
+
+  .menu-section .section-description {
+    font-size:18px;
+    font-weight: bold;
+    text-align: center;
+    padding-top: 5px;
+    padding-bottom: 10px;
+  }
+
+.menu-item {
+  font-family: "Gill Sans";
+  font-size:   18px;
+  font-weight: normal;
+  width: 645px;
+  margin: 0 auto;
+  padding-top: 10px;
+  padding-bottom: 15px;
+}
+
+.menu-item:after {
+  content: "";
+  display: block;
+  clear: both;
+}
+
+  .menu-item .item-left-block {
+    float: left;
+    width: 575px;
+    clear: left;
+  }
+
+    .menu-item .item-name {
+      font-size: 24px;
+    }
+
+    .menu-item .description-and-note {
+      width: 550px
+    }
+
+      .menu-item .item-description {
+        font-style: italic;
+        font-family: "Iowan Old Style";
+        display: inline;
+      }
+
+      .menu-item .item-note {
+        font-size: 15px;
+        display: inline-block;
+        font-weight: 600;
+      }
+
+  .menu-item .item-right-block {
+    float: right;
+    width: 40px;
+  }
+
+    .menu-item .item-price {
+      font-size: 20px;
+      float: right;
+    }
+
+// How do I get this to apply just to the 'bottom-link class, not all 'a's ?
+  .footer {
+    float: left;
+    clear: left;
+    text-align: center;
+    display: block;
+    width: 100%;
+  }
+
+  .footer a {
+    font-size: 24px;
+    display: block;
+  }
+
+  .footer .bottom-image {
+    width: 100%;
+  }
+
+.separator {
+  padding: 20px 0;
+  text-align: center;
+  font-size: 24px;
+  display: block;
+  clear: both;
+}

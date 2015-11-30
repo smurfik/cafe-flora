@@ -1,0 +1,41 @@
+<div>
+  <%= image_tag "kale.png", :class => "top-image" %>
+</div>
+
+<h1 class="preview-menu-name"><%= @menu.name %></h1>
+
+<% @menu.menu_sections.reverse.each do |s| %>
+  <div class="preview-section">
+    <div class="rotated-name-container">
+      <h3 class="preview-section-name rotate">
+        <%= s.name %>
+      </h3>
+    </div>
+
+    <div class="preview-section-container">
+      <div class="section-description">
+        <% if s.description != nil %>
+          <div class="section-description"><%= s.description %></div>
+        <% end %>
+      </div>
+
+      <ul> <% s.menu_items.each do |i|  %>
+        <div class="menu-item">
+          <div class="item-left-block">
+            <div class="item-name"><%= i.name.upcase %></div>
+            <div class="item-description"><%= i.description %></div>
+            <div><%= i.clean_note%></div>
+          </div>
+          <div class="item-right-block">
+            <div class="item-price"><%= i.price.to_i %></div>
+          </div>
+        </div>
+        <% end %>
+      </ul>
+    </div>
+  </div>
+<% end %>
+
+<div>
+  <%= image_tag "squash.png", :class => "bottom-image" %>
+</div>
